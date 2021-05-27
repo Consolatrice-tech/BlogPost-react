@@ -3,31 +3,41 @@
 }
 
  .login-form {
-    max-width: 40%;
-    margin:9% 0% 0% 30%;
+   
+    max-width: 50%;
+    margin:6% 10% 0% 20%;
     align-items: center;
     border-radius: 3px;
-    box-shadow: 1px 1px 5px 2px black;
-    padding: 39px 16px 29px 16px;
+    /* box-shadow: 1px 1px 5px 2px black; */
+    padding: 10px 60px 200px 36px;
   }
-  
+  .layout{
+    background-color: white;
+  }
+    
+   
   /* #components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
     float: left;
   } */
   /* #components-form-demo-normal-login .login-form-button {
     width: 100%;
   } */
-  
-
 
   .Signup-container{
     width: 50%;
     margin: 5% 0% 0% 20% ;
-    
     padding: 39px 33px 20px 33px;
     box-shadow: 1px 1px 5px 2px rgb(131, 124, 124);
   }
   .columnview{
     margin:6% 0% 0% 0%;
+  }
+  .dashboard-form{
+    margin-top: 10%;
+  }
+  .dashboard-button{
+    /* float: left; */
+    text-align: left;
+    margin-left: 50%;;
   }
   

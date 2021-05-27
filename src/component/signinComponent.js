@@ -6,6 +6,7 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import BlogApi from '../service/apiBlog';
 import {useHistory} from'react-router-dom';
+import store from "store";
 
 
 const Signin=() =>{
@@ -18,6 +19,7 @@ if(!res){
   return
 }
 if(res.status === 201){
+  store.set('user',{token:res.data.token})
   return history.push('/dashboard')
 }
 
@@ -26,6 +28,7 @@ if(res.status === 201){
 };
 
     return(
+      
         <Form
         name="normal_login"
         className="login-form"
@@ -53,7 +56,7 @@ if(res.status === 201){
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
   
-          <a className="login-form-forgot" href="">
+          <a className="login-form-forgot" href="" alt="">
             Forgot password
           </a>
         </Form.Item>
@@ -61,10 +64,11 @@ if(res.status === 201){
         <Form.Item>
           <Button type="primary" htmlType="submit" className="login-form-button">
             Log in
-          </Button>
-          Or <a href="/signup">register now!</a>
+          </Button> <br/>
+           Or <a href="/signup">register now!</a>
         </Form.Item>
       </Form>
+      
     )
 }
 export default Signin;

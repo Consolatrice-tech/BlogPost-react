@@ -5,8 +5,6 @@ const Signin=()=>{
     return(
     <MainLayout>
    <SigninComponent></SigninComponent> 
-
-
    </MainLayout>
 
     )

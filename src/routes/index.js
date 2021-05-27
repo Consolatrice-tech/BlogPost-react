@@ -4,6 +4,7 @@ import Signup from '../view/SignupView';
 import Dashboard from '../view/Dashboard';
 import ViewBlog from '../view/ViewBlog';
 import {Route, Switch} from 'react-router-dom';
+
 const Index=()=>{
 return (
 <Switch>

@@ -2,10 +2,11 @@ import React,{ useState} from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './index.css';
-import { Form, Input, Button, Checkbox } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Checkbox, Select } from 'antd';
 import BlogApi from '../service/apiBlog';
 import {useHistory} from'react-router-dom';
+
+const { Option } = Select;
 
 
 const Signup=() =>{
@@ -94,7 +95,12 @@ if(res.status === 201){
           },
         ]}
       >
-        <Input />
+        <Select placeholder="select your gender">
+          <Option value="male">Male</Option>
+          <Option value="female">Female</Option>
+          
+        </Select>
+        
       </Form.Item>
 
 <Form.Item

@@ -1,15 +1,27 @@
 import React,{useState,useEffect} from 'react';
 import MainLayout from '../component/MainLayout';
 import BlogApi from '../service/apiBlog';
-import {Card, Row, Col} from 'antd'
-
+import {Card, Row, Col} from 'antd';
+import {notification} from 'antd';
+import { useHistory} from 'react-router-dom'
 import '../component/index.css';
+import store from "store";
+
 
 
 const ViewBlog=({match})=>{
+    const history=useHistory();
+
     const[blog,setBlog]=useState({}); // set... is function hooks
     const blogId= match.params.blogId
     useEffect(()=>{
+        const user = store.get('user')
+        if (!user){
+            notification.warn({
+                message:'please login'
+            })
+            return history.push('/signin')
+        }
         BlogApi.getOneBlog(blogId)
         .then((res)=>{setBlog(res.data)
         })}
@@ -22,7 +34,7 @@ const ViewBlog=({match})=>{
      <Col span={8} className="columnview">
 <h1> {blog.title}  </h1> 
  
-<img src={blog.photo}  style={{width:"50%"}}/> 
+<img src={blog.photo} alt="" style={{width:"50%"}} /> 
 <p> posted on: {blog.timeStamp}</p>
 </Col>
 <Col span={8} className="columnview">
